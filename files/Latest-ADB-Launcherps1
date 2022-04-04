@@ -1,0 +1,23 @@
+
+New-Item -ItemType Directory "$env:HomePath\Latest ADB Fastboot Tool" -EA ignore | Out-Null
+
+Set-Location "$env:HomePath\Latest ADB Fastboot Tool" -EA ignore 
+
+Write-Host ''
+Write-Host 'This tool is Sponsored by SendLetters, the Easiest way to Send Letters'
+Write-Host 'and Documents Physically Anywhere in the World'
+Write-Host 'Link: sendletters.pp.ua'
+Start-Sleep -Seconds 1
+Write-Host ''
+
+Write-Host 'Paste your files(twrp, gsi etc) in Latest ADB Fastboot Tool Folder'
+Write-Host 'and enter ADB and Fastboot commands in here'
+Start-Sleep -Seconds 3
+Write-Host ''
+
+# Launching folder in current directory
+Start-Process .
+
+# https://stackoverflow.com/a/60907/2437224
+# Stops the command prompt from getting closed
+powershell -noexit 

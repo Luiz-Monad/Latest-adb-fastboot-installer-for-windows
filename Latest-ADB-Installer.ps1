@@ -77,7 +77,7 @@ Write-Host 'Uninstalling older version'
 Invoke-Command { adb kill-server } > $null 2>&1
 Invoke-Command { Get-Process -Name adb | Stop-Process -Force } > $null 2>&1
 Remove-Item -Recurse -Force -EA Ignore $target
-New-Item -ItemType Directory $target
+New-Item -ItemType Directory $target 
 
 # Source: https://stackoverflow.com/questions/37814037/how-to-unzip-a-zip-file-with-powershell-version-2-0
 # Source: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-6
@@ -118,7 +118,7 @@ Invoke-WebRequest "$thisrepofiles/unsigned_driver_installerps1" -OutFile 'usb_dr
 # Running unsigned_driver_installer tool
 Push-Location usb_driver
 Write-Host
-./unsigned_driver_installer.ps1 -nopause
+./unsigned_driver_installer.ps1 -nopause $true
 Pop-Location
 
 # # Doing fastboot drivers installation
